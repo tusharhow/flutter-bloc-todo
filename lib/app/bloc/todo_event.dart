@@ -23,4 +23,4 @@ class TodoUpdate extends TodoEvent {
   TodoUpdate(this.id, this.title, this.description);
 }
 
-class FetchTodo extends TodoEvent {}
+class FetchTodos extends TodoEvent {}

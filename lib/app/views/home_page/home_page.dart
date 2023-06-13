@@ -17,7 +17,7 @@ class MyHomePage extends StatelessWidget {
       body: BlocBuilder<TodoBloc, TodoState>(
         builder: (context, state) {
           if (state is TodoInitialState) {
-            BlocProvider.of<TodoBloc>(context).add(FetchTodo());
+            BlocProvider.of<TodoBloc>(context).add(FetchTodos());
             return const SizedBox();
           } else if (state is TodoLoadingState) {
             return const Center(

@@ -12,7 +12,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   List<Todo> todos = [];
 
   TodoBloc() : super(TodoInitialState()) {
-    // add todo and update todo
+    // add todo
     on<TodoAdd>((event, emit) async {
       emit(TodoLoadingState());
       await _todoServicces.addTodos(event.title, event.description);
@@ -20,7 +20,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
       emit(TodoLoadedState(todos));
     });
     // get all todos
-    on<FetchTodo>((event, emit) async {
+    on<FetchTodos>((event, emit) async {
       emit(TodoLoadingState());
       List<Todo> todos = await _todoServicces.getTodos();
       emit(TodoLoadedState(todos));

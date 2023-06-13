@@ -62,6 +62,8 @@ class ReusableAlertDialog extends StatelessWidget {
                   _todoDescriptionController.text,
                 ),
               );
+              _todoTitleController.clear();
+              _todoDescriptionController.clear();
               Navigator.pop(context);
             } else {
               BlocProvider.of<TodoBloc>(context).add(
@@ -70,6 +72,8 @@ class ReusableAlertDialog extends StatelessWidget {
                   _todoDescriptionController.text,
                 ),
               );
+              _todoTitleController.clear();
+              _todoDescriptionController.clear();
               Navigator.pop(context);
             }
           },
